@@ -1,0 +1,16 @@
+flask==2.3.3
+flask-cors==4.0.0
+numpy==1.26.0
+torch==2.2.1
+torchvision==0.17.1
+opencv-python-headless==4.8.1.78
+Pillow==10.0.0
+werkzeug==3.0.1
+scipy>=1.7.1
+scikit-image>=0.19.2
+python-bidi>=0.4.2
+PyYAML>=5.3.1
+Shapely>=1.8.0
+pyclipper>=1.2.1
+ninja>=1.10.2.3
+easyocr==1.7.1 
