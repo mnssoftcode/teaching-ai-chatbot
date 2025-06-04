@@ -15,41 +15,45 @@
                 <i class="fas fa-robot"></i>
                 <h1>Teaching AI</h1>
             </div>
-            <div class="language-selector">
-                <i class="fas fa-globe"></i>
-                <select id="languageSelect">
-                    <option value="en">English</option>
-                    <option value="hi">हिंदी</option>
-                </select>
-            </div>
+            <button id="menuBtn" class="menu-btn" title="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
     <main>
         <div class="chat-container">
-            <div class="chat-header">
-                <h2>AI Teaching Assistant</h2>
-                <p>Ask me anything about your studies!</p>
-            </div>
             <div class="chat-messages" id="chatMessages">
                 <!-- Messages will be added here dynamically -->
             </div>
             <div class="input-container">
-                <div class="input-options">
-                    <button id="imageUploadBtn" title="Upload Image">
-                        <i class="fas fa-image"></i>
-                    </button>
-                    <button id="cameraBtn" title="Take Photo">
-                        <i class="fas fa-camera"></i>
-                    </button>
-                    <button id="voiceBtn" title="Voice Input">
-                        <i class="fas fa-microphone"></i>
-                    </button>
-                </div>
                 <div class="text-input-container">
+                    <div class="input-side-buttons">
+                        <button id="plusBtn" class="plus-btn" title="More options">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button id="voiceBtn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
                     <textarea id="userInput" placeholder="Type your question here..."></textarea>
                     <button id="sendBtn">
                         <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <!-- Floating Menu -->
+                <div class="floating-menu" id="floatingMenu">
+                    <button class="floating-menu-item" id="fileOption">
+                        <i class="fas fa-folder"></i>
+                        <span>Files</span>
+                    </button>
+                    <button class="floating-menu-item" id="cameraOption">
+                        <i class="fas fa-camera"></i>
+                        <span>Camera</span>
+                    </button>
+                    <button class="floating-menu-item" id="photosOption">
+                        <i class="fas fa-image"></i>
+                        <span>Photos</span>
                     </button>
                 </div>
             </div>
@@ -71,28 +75,88 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Teaching AI</h3>
-                <p>Your personal learning assistant</p>
+    <!-- Onboarding Modal -->
+    <div class="onboarding-modal" id="onboardingModal">
+        <div class="onboarding-modal-content">
+            <h2>Welcome! Tell us about yourself</h2>
+            <form id="onboardingForm">
+                <label>Student Name
+                    <input type="text" id="studentName" required placeholder="e.g. Rahul Sharma" />
+                </label>
+                <label>Sex
+                    <select id="studentSex" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label>Age
+                    <input type="number" id="studentAge" min="5" max="100" required placeholder="e.g. 16" />
+                </label>
+                <label>Study Field
+                    <input type="text" id="studyField" required placeholder="e.g. Science, Commerce, Arts" />
+                </label>
+                <label>Subject
+                    <input type="text" id="subject" required placeholder="e.g. Mathematics, History" />
+                </label>
+                <label>Study Medium
+                    <select id="studyMedium" required>
+                        <option value="">Select</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label>Preferred Answer Length
+                    <select id="answerLength" required>
+                        <option value="short">Short (1-2 lines)</option>
+                        <option value="long">Long (detailed)</option>
+                    </select>
+                </label>
+                <button type="submit" class="onboarding-submit">Start Chatting</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Reset Button with Label -->
+    <div class="reset-profile-float">
+        <button id="resetProfileBtn" class="reset-profile-btn" title="Clear your data">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+        <span class="reset-profile-label">Clear your data</span>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebarMenu" class="sidebar-menu">
+        <div class="sidebar-menu-content">
+            <button id="closeMenuBtn" class="close-menu-btn" title="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="sidebar-menu-links">
+                <button class="sidebar-link-btn">Contact Us</button>
+                <button class="sidebar-link-btn">About Us</button>
+                <button class="sidebar-link-btn">Privacy Policies</button>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: support@teachingai.com</p>
-                <p>Phone: +1 234 567 890</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Teaching AI</h3>
+                    <p>Your personal learning assistant</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@teachingai.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Teaching AI. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
